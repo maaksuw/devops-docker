@@ -1,0 +1,10 @@
+Alpine tagged image has a size of around 16 MBs, which is much less than the ubuntu tagged images 83MBs.
+
+I was not sure what to report for this exercise, but here are the commands to run the sh in the alpine version of the image and the same secret message.
+
+1. docker tag devopsdockeruh/simple-web-service:alpine alpine
+2. docker run -d -it --name alpine alpine
+3. docker exec -it alpine sh
+4. (within the container) tail -f ./text.log
+
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
