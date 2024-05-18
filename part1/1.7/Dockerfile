@@ -13,4 +13,4 @@ RUN apt-get update &&\
     chmod +x script.sh
 
 # When running Docker run the command will be ./hello.sh
-CMD ./script.sh
+ENTRYPOINT ["./script.sh"]
