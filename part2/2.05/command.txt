@@ -1,0 +1,3 @@
+I tried spinning up three compute containers, and this seemed to work pretty well.
+The command I used:
+docker compose up --scale compute=3
