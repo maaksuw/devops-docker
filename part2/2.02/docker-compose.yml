@@ -1,0 +1,5 @@
+services:
+  back-end:
+    image: maaksuw/web-server
+    ports:
+      - 3456:8080
