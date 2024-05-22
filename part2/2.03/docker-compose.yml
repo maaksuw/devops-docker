@@ -1,5 +1,6 @@
 services:
   backend:
+    container_name: backend-1
     build: ./example-backend
     command: ./server
     ports:
@@ -7,6 +8,7 @@ services:
     environment:
       - REQUEST_ORIGIN=http://localhost:5000
   frontend:
+    container_name: frontend-1
     build: ./example-frontend
     command: serve -s -l 5000 build
     ports:
