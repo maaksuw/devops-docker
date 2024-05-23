@@ -33,3 +33,5 @@ services:
       - POSTGRES_PASSWORD=secret
       - POSTGRES_DB=our-database
     container_name: postgres-db
+    volumes:
+      - ./data:/var/lib/postgresql/data
