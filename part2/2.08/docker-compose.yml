@@ -1,0 +1,41 @@
+services:
+
+  backend:
+    container_name: backend-cont
+    build: ./example-backend
+    command: ./server
+    environment:
+      - REQUEST_ORIGIN=http://frontend:5000
+      - REDIS_HOST=redis
+      - POSTGRES_HOST=db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_DATABASE=our-database
+
+  frontend:
+    container_name: frontend-cont
+    build: ./example-frontend
+    command: serve -s -l 5000 build
+    environment:
+      - REACT_APP_BACKEND_URL=http://backend:8080
+
+  redis:
+    image: "redis:alpine"
+
+  db:
+    image: postgres:13.2-alpine
+    restart: unless-stopped
+    environment:
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_DB=our-database
+    container_name: postgres-db
+    volumes:
+      - ./data:/var/lib/postgresql/data
+
+  proxy:
+    image: jwilder/nginx-proxy
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
