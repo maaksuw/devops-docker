@@ -2,3 +2,5 @@ I only made changes to the frontend's Dockerfile and the docker-compose.yml.
 From frontend's Dockerfile I removed the ENV variable that pointed directly to the backend.
 This means the ENV is only declared in the docker-compose.yml I changed the port to 80, so that the frontend makes all the calls to the reverse proxy (localhost:80).
 I made the Dockerfiles in both example-backend and example-frontend visible on GitHub, as well as the docker-compose.yml in this directory.
+
+This configuration should also fulfill the requirements for exercise 2.10.
