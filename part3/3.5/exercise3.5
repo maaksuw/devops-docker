@@ -1,2 +1,3 @@
 The Dockerfiles are in the respective directories.
 The backend in my case has been using golang:1.16, which according to DockerHub is based on Debian Linux, so the useradd command seemed to be fine.
+We can confirm that both containers are running as non-root users by executing bash in the containers and running 'whoami'.
