@@ -1,0 +1,11 @@
+The Dockerfiles are in the respective directories.
+The sizes before this exercise are:
+Frontend: 1.07 GB
+Backend: 1.27 GB
+The sizes after this exercise are:
+Frontend: 1.07 GB
+Backend: 1.27 GB
+Both images are quite large now, so the change in reducing the number of layers is likely too small to be visible here.
+This is likely due to the fact that in part 1, I created the Dockerfiles from pre-installed images for Node.js and Goland, not from Linux. The instructions there simply said to find suitable images, I did not know this would be an exercise later, my apologies. I also did not know which approach was better for the exercises then (to start from linux or look for a pre-installed image), so I hope this is okay.
+As such there were also not many useless parts here, since we simply install the npm dependencies and build the projects.
+I will change the base images to alpine versions in the next step.
