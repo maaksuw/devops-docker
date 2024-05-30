@@ -1,0 +1,2 @@
+With the multi-stage build, the size of the frontend dropped from 475 MB to 124 MB.
+We could likely drop this even more, if we looked for other ways to serve the files, since now we start from the same base image so we convenietly have npm pre-installed and can use the same command and package as before.
