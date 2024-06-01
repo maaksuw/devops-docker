@@ -1,3 +1,5 @@
+Dockerfile1 is the Dockerfile before and Dockerfile2 is the Dockerfile after the optimizations.
+
 Let's opitimize the example Java Spring project from the course material. 
 
 1. Let us ensure the container does not run as root - we do the user configurations shown in the material. amazoncorretto seems to run on amazonlinux, which contains a fairly minimal set of packages, so we need to download useradd by using yum, in order to add a new user. Alternatively we could use an existing user such as 'nobody'. We can verify the user has been changed by executing bash inside the container.
